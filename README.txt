@@ -27,11 +27,7 @@ end
 
 local function createAura(character)
     local root = character:WaitForChild("HumanoidRootPart", 10)
-
-    if not root then
-        warn("EA_ZEROX: HumanoidRootPart not found")
-        return
-    end
+    if not root then return end
 
     removeAura(character)
 
@@ -55,7 +51,6 @@ local function createAura(character)
     light.Brightness = 2
     light.Range = 12
     light.Parent = root
-
 end
 
 player.CharacterAdded:Connect(createAura)
